@@ -1,0 +1,23 @@
+; (cadr x) -> (car (cdr x))
+'(1 2 3)
+(quote (1 2 3))
+'(1 2 3 . ())
+(cons 1 (cons 2 (cons 3 ())))
+'(1 . (2 . (3 . ())))
+(list 1 2 3)
+((lambda x x) 1 2 3)
+(let ((x '(5 2 3)))
+    (set-car! x 1)
+    x
+)
+(let ((x '(1)))
+    (set-cdr! x '(2 3))
+    x
+)
+(caar '(((1 2 3))))
+(cadr '(0 (1 2 3)))
+(list-ref '(0 (1 2 3)) 1)
+(list-tail '(0 1 2 3) 1); nth cdr
+(append '(1) '(2) '(3))
+(reverse '(3 2 1))
+(memq 1 '(0 4 5 6 1 2 3))

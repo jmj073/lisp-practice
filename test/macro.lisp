@@ -1,0 +1,6 @@
+(defmacro setTo10(num)
+(defvar num 10)(print num))
+(defvar x 25)
+(print x)
+(setTo10 x)
+(print x)
