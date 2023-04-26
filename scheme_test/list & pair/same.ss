@@ -20,4 +20,4 @@
 (list-tail '(0 1 2 3) 1); nth cdr
 (append '(1) '(2) '(3))
 (reverse '(3 2 1))
-(memq 1 '(0 4 5 6 1 2 3))
+(memv 1 '(0 4 5 6 1 2 3))
