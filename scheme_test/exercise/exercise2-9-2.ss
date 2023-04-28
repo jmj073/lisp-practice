@@ -1,0 +1,20 @@
+(define make-stack
+    (lambda ()
+        (let ((ls '()))
+            (lambda (msg . x)
+                (case msg
+                    ((push!)
+                        (set! ls (cons (car x) ls)))
+                    ((pop!)
+                        (set! ls (cdr ls)))
+                    ((empty? mt?)
+                        (null? ls))
+                    ((top)
+                        (car ls))
+                    (else 'nonono))))))
+
+(let ((x 4) (y 5))
+  (case (+ x y)
+    ((1 3 5 7 9) 'odd)
+    ((0 2 4 6 8) 'even)
+    (else 'out-of-range)))
