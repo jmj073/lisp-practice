@@ -1,0 +1,1 @@
+(display (if (odd? (read)) "SK" "CY"))
