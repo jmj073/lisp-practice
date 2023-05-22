@@ -1,0 +1,15 @@
+(define (rank->score rank)
+    (let* ((a (char->integer (string-ref rank 0))))
+        (if (< a 69)
+            (let ((b (string-ref rank 1)))
+                (+ (- 69 a) (if (char=? b #\+) 0.5 0)))
+            0)))
+
+
+(let loop ((n 20) (a 0) (b 0))
+    (if (< 0 n) 
+        (let* ((_ (read)) (score (read)) (rank (symbol->string (read))))
+            (let ((a (+ a (* score (rank->score rank))))
+                  (b (+ b (if (char=? (string-ref rank 0) #\P) 0 score))))
+                (loop (- n 1) a b)))
+        (display (/ a b))))

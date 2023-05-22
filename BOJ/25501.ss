@@ -5,27 +5,23 @@
                 (set! cnt (+ cnt 1))
                 p))))
 
-(define (read-line)
-    (symbol->string (read)))
-
-(define (rec s l r counter)
+(define (recursion s l r counter)
     (counter)
     (cond
         ((>= l r) 1)
-        ((not (char=? (string-ref s r) (string-ref s l)))
-            0)
-        (else (rec s (+ l 1) (- r 1) counter))))
+        ((not (char=? (string-ref s r) (string-ref s l))) 0)
+        (else (recursion s (+ l 1) (- r 1) counter))))
 
 (define (is-palindrome s counter)
     (let ((len (string-length s)))
-        (rec s 0 (- len 1) counter)))
+        (recursion s 0 (- len 1) counter)))
 
 
 (define n (read))
 
 (let loop ((n n))
     (if (< 0 n)
-        (let ((s (read-line))
+        (let ((s (symbol->string (read)))
                (cnt (make-counter)))
             (display (is-palindrome s cnt))
             (display " ")
