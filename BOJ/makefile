@@ -16,7 +16,7 @@ clean: FORCE
 	rm -r $(BUILD_DIR)
 
 $(BUILD_DIR):
-	mkdir $@
+	@mkdir $@
 
 FORCE:
 
