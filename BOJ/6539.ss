@@ -1,0 +1,1 @@
+(do ((t (read) (- t 1))) ((zero? t)) (print (inexact->exact (floor (sqrt (read))))))

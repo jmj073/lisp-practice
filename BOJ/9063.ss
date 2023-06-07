@@ -1,0 +1,5 @@
+(let loop ((N (read)) (minx #e1e5) (maxx #e-1e5) (miny #e1e5) (maxy #e-1e5))
+    (if (zero? N)
+        (display (* (- maxx minx) (- maxy miny)))
+        (let* ((x (read)) (y (read)))
+            (loop (- N 1) (min minx x) (max maxx x) (min miny y) (max maxy y)))))

@@ -1,0 +1,1 @@
+(define N (read)) (print (do ((a 0 (+ (quotient N b) a)) (b 5 (* b 5))) ((> b 500) a)))
