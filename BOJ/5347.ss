@@ -1,0 +1,1 @@
+(do ((n (read) (- n 1))) ((zero? n)) (print (lcm (read) (read))))
