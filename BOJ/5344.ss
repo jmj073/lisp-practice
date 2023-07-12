@@ -1,2 +1,1 @@
-; (write (read) (read))
-(+ 3 4)
+(do ((n (read) (- n 1))) ((zero? n)) (print (gcd (read) (read))))
